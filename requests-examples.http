@@ -1,0 +1,106 @@
+# примеры API-запросов
+
+@baseUrl = http://localhost:8080/api
+# admin
+@token1 = 4ea86422731d419dec1d2d1524305b0cf65c801c
+# mike
+@token2 = 9b1b85788df947e5c60da465e55a0010a0dde61f
+# lina
+@token3 = 8c32d8f1a9ca40259d0458e43452a6c0559a9365
+
+# получение пользователей
+GET {{baseUrl}}/users
+Content-Type: application/json
+
+###
+# получение пользователя по id
+GET {{baseUrl}}/users
+Content-Type: application/json
+
+### 
+# получение всех постов
+GET {{baseUrl}}/posts
+Content-Type: application/json
+
+###
+# получение одного поста
+GET {{baseUrl}}/posts/5
+Content-Type: application/json
+
+###
+# создание поста
+POST {{baseUrl}}/posts
+Content-Type: application/json
+Authorization: Token {{token3}}
+
+{
+  "title": "Шкаф IKEA5",
+  "text": "Срочно"
+}
+
+###
+# попытка изменить пост
+PATCH {{baseUrl}}/posts/4
+Content-Type: application/json
+Authorization: Token {{token2}}
+
+{
+  "text": "My name is Linochka"
+}
+
+###
+# попытка удалить пост
+DELETE {{baseUrl}}/posts/5
+Content-Type: application/json
+Authorization: Token {{token2}}
+
+
+### 
+# фильтрация по автору
+GET {{baseUrl}}/posts/?author=2
+Content-Type: application/json.
+
+
+### 
+# фильтрация по дате
+GET {{baseUrl}}/posts/?created_at_before=2021-12-05
+Content-Type: application/json.
+
+###
+# получение одной из подписок
+GET {{baseUrl}}/subscriptions/4
+Authorization: Token {{token3}}
+
+###
+# получение подписок
+GET {{baseUrl}}/subscriptions
+Content-Type: application/json
+Authorization: Token {{token3}}
+
+###
+# попытка создать подписку
+POST {{baseUrl}}/subscriptions
+Content-Type: application/json
+Authorization: Token {{token2}}
+
+{
+  "author": "3"
+}
+
+###
+# попытка удалить подписку
+DELETE {{baseUrl}}/subscriptions/3
+Content-Type: application/json
+Authorization: Token {{token3}}
+
+###
+# получение ленты
+GET {{baseUrl}}/
+Content-Type: application/json
+Authorization: Token {{token2}}
+
+###
+# получение поста ленты
+GET {{baseUrl}}/1
+Content-Type: application/json
+Authorization: Token {{token3}}
