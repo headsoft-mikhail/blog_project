@@ -9,11 +9,11 @@
 
 1. Для получения прав доступа используется токен
 
-1. Доступные запросы перечислены в [requests-examples.http](https://github.com/headsoft-mikhail/blog_project/requests-examples.http)
+1. Доступные запросы перечислены в [requests-examples.http](https://github.com/headsoft-mikhail/blog_project/blob/master/requests-examples.http)
 
-1. Параметры settings.py загружаются из переменных среды. Файлы с переменными среды и Dockerfile расположены в директории [docker](https://github.com/headsoft-mikhail/blog_project/docker)
+1. Параметры settings.py загружаются из переменных среды. Файлы с переменными среды и Dockerfile расположены в директории [docker](https://github.com/headsoft-mikhail/blog_project/tree/master/docker)
 
-1. Для запуска проекта  - выполнить из директории проекта ```docker-compose up -d```
+1. Для запуска проекта  - выполнить из директории проекта ```docker-compose up -d```. Порт nginx 8080
 
   
 1. Не реализовано:
